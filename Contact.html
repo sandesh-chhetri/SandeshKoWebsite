@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="Sandesh.css">
+    <script src="Sandesh.js"></script>
+</head>
+<body>
+    <div class="vessel">
+        <nav>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/sndesh.pc/"><i class="facebook"></i></a>
+                <a href="https://twitter.com/SandeshJungChh2"><i class="twitter"></i></a>
+                <a href="https://www.instagram.com/im_sandesh_chhetri/"><i class="instagram"></i></a>
+                <a href="https://github.com/Sandeshsir"><i class="github"></i></a>
+            </div>              
+            <div class="logo">Sandy</div>
+            <div>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Skills.html">Skills</a></li>
+                    <li><a href="Hobbies.html">Hobbies</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Privacy.html">Privacy</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Experience.html">Experience</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </nav>
+        <div class="form">
+            <div class="cont content1">
+                <h1 class="conthead">Contact Me</h1>
+                <form id="contactForm" onsubmit="showThankYouMessage(event);" method="post" action="#">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Write your name here." required><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Your email" required><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" placeholder="Message for me." required></textarea><br>
+                    <input type="submit" value="Submit">
+                </form>
+
+                <div id="thankYouMessage" style="display: none;">
+                    <h2>Thank you for contacting me!</h2>
+                    <p>I will try to get back to you as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="foot">SANDESH CHHETRI &COPY; 2023, ALL RIGHTS RESERVED</p>
+    </footer>
+</body>
+</html>
