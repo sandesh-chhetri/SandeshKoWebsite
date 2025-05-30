@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Sandesh.css">
-    <title>Sandesh's Website</title>
-
+    <title>Sandesh Chhetri - Java Backend Developer</title>
 </head> 
 <body>
 	<div class="vessel">
@@ -30,25 +29,65 @@
 				<li><a href="Experience.html">Experience</a></li>
 			</ul>
 		</nav>
-		<div class="wrapper">
+		<div class="wrapper"> <!-- Hero section wrapper -->
 			<div class="cont cont1">
-				<span class="topline">Hello,</span>
-				<h1>I'm <span class="multitext">Sandesh</span></h1>
-				<p>Nice to see you here!<br>
-					I am an IT enthusiast.
-				</p>
+				<h1>Hi, I'm <span class="multitext">Sandesh Chhetri</span> — <br>Java Backend Developer</h1>
+				<p>Specializing in building robust backend systems with Java, Spring Boot, and AWS.</p>
 				<div class="btn">
-					<a href="cv.pdf"><button>Download CV</button></a>
-					<a href="Contact.html"><button>Hire me</button></a>
+					<a href="Projects.html"><button>View Projects</button></a>
+					<a href="cv.pdf"><button class="secondary">Download CV</button></a>
 				</div>
 			</div>
 			<figure>
-				<img src="sandy2.png" alt="Sandesh's image">
+				<img src="sandy2.png" alt="Sandesh Chhetri">
 			</figure>
 		</div>
+
+        <div id="tech-stack-carousel-section" class="tech-stack-section">
+            <h2 class="section-title">My Tech Stack</h2>
+            <div class="carousel-container">
+                <ul class="tech-carousel">
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot"><span>Spring Boot</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL"><span>MySQL</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="background-color: white; border-radius: 50%; padding: 2px;"><span>GitHub</span></li>
+                    <!-- Duplicates for smooth infinite scroll -->
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot"><span>Spring Boot</span></li>
+                    <li class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL"><span>MySQL</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="projects-teaser-section" class="projects-teaser-section"> <!-- Replaced placeholder div -->
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="teaser-container">
+                <div class="project-teaser-card">
+                    <h3>BookExchangeCentral</h3>
+                    <p class="project-description">A web platform for students to trade textbooks, facilitating easier access to academic resources.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Java, Spring Boot, MySQL, AWS</p>
+                    <a href="Projects.html#project-bookexchange" class="btn-link"><button class="secondary">Learn More</button></a>
+                </div>
+                <div class="project-teaser-card">
+                    <h3>Writegy</h3>
+                    <p class="project-description">An AI-powered writing assistant designed to improve content creation using Natural Language Processing.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Java, Spring Boot, NLP</p>
+                    <a href="Projects.html#project-writegy" class="btn-link"><button class="secondary">Learn More</button></a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2.5em;">
+                <a href="Projects.html"><button>View All Projects</button></a>
+            </div>
+        </div>
 	</div>
 	<footer>
-        <p class="foot">SANDESH CHHETRI &COPY 2023, ALL RIGHTS RESERVED</p>
+        <p class="foot">&copy; <script>document.write(new Date().getFullYear())</script> Sandesh Chhetri. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
