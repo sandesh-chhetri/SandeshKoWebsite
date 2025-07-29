@@ -342,7 +342,11 @@ textarea {
     border-bottom: 1px solid var(--border-color); /* Use theme border color */
   }
   nav ul li:last-child a { border-bottom: none; }
-  .social-icons { margin-top: 1em; margin-left: 0; }
+  .social-icons {
+    margin-top: 1em;
+    margin-left: 0;
+    order: -1; /* Move social icons to the top */
+  }
 
   .wrapper {
     padding: 2em 5%; /* Slightly less vertical padding on mobile */
