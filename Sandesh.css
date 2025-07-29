@@ -1,359 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Dark Theme Palette */
+  --primary-dark: #23272F; /* Main background */
+  --secondary-dark: #2F343F; /* Slightly lighter bg for cards/elements */
+  --text-light: #EAEAEA;     /* Primary text color */
+  --text-muted: #A0A0A0;    /* For less important text */
+  --accent-green: #3DDC84;  /* Spring green like */
+  --accent-green-darker: #35BF70; /* Hover for green */
+  --java-orange: #f89820;   /* Optional accent */
+  --border-color: #444857;  /* Subtle borders */
+  --white: #FFFFFF; /* Retain for specific uses if needed */
+
+  /* Fonts */
+  --font-monospace: 'Fira Code', 'JetBrains Mono', monospace; /* Primary dev font */
+  --font-sans: 'Montserrat', sans-serif; /* Fallback or for specific non-code text if needed */
+
+  /* Assign to body and heading, can be same or different */
+  --font-body: var(--font-monospace);
+  --font-heading: var(--font-monospace);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-  }
-  
-  .vessel {
-    min-height: 100vh;
-    background-color: #f3f5f8;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: bisque;
-    height: 10%;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    width: 100%;
-  }
-  
-  nav ul li a {
-    text-align: center;
-    font-size: 20px;
-    color: rgb(168, 123, 55);
-    letter-spacing: 3px;
-    text-decoration: none;
-    text-transform: capitalize;
-    margin: 0 15PX;
-    width: 100%;
-  }
-  
-  nav ul li a:hover {
-    font-size: 1.2rem;
-    color: rgb(205, 131, 41);
-  }
-  .logo {
-    display: flex;
-    font-size: 40px;
-    font-weight: 800;
-    color: chocolate;
-    letter-spacing: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  
-  .wrapper {
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 80px);
-    justify-content: center;
-    align-items: center;
-    padding: 0 5%;
-    overflow: hidden;
-  }
-  
-  .cont {
-    width: 50%;
-  }
-  
-  .cont1 {
-    width: 50%;
-  }
-  
-  .topline {
-    display: block;
-    position: relative;
-    font-size: 35px;
-    letter-spacing: 3px;
-    color: rgb(180, 109, 16);
-  }
-  h1 {
-    display: block;
-    font-size: 4vw;
-    font-weight: 900;
-    color: rgb(12, 207, 207);
-  }
-
-  
-  .multitext {
-    color: rgb(107, 107, 250);
-    text-transform: capitalize;
-  }
-  
-  p {
-    display: block;
-    width: 90%;
-    font-size: 2vw;
-    font-weight: 700;
-    color: blueviolet;
-  }
-  
-  .btn {
-    width: 100%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 2vw;
-    font-weight: 400;
-    color: #fff;
-    background-color: rgb(12, 207, 207);
-    padding: 1% 2%;
-    margin: 2% 0.5%;
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-  }
-  
-  button:hover {
-    background-color: rgb(107, 107, 250);
-  }
-  
-  @media screen and (max-width: 768px) {
-    nav ul li a {
-        font-size: 3vw;
-        margin: 0 2%;
-        width: 20%;
-    }
-
-    .wrapper {
-        padding: 0 2%;
-    }
-
-    .cont, .cont1 {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 6vw;
-    }
-
-    p {
-        font-size: 3vw;
-    }
-
-    .btn {
-        left: 5%;
-    }
-
-    button {
-        font-size: 4vw;
-        padding: 2% 4%;
-        margin: 4% 1%;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px; /* Base font size, adjust if Fira Code appears too small/large */
+  line-height: 1.7; /* Increased line-height for readability with mono fonts */
+  color: var(--text-light);
+  background-color: var(--primary-dark);
+  margin: 0;
+}
+
+.vessel {
+  min-height: 100vh;
+  background-color: var(--primary-dark); /* Ensure vessel matches body */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-dark); /* Nav background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow on dark */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1em 5%;
+  border-bottom: 1px solid var(--border-color); /* Bottom border for nav */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-family: var(--font-heading); /* Or --font-sans if preferred for nav */
+  font-size: 1rem; 
+  color: var(--text-light); 
+  letter-spacing: 1px; 
+  text-decoration: none;
+  text-transform: uppercase; /* Uppercase for nav links often looks good */
+  margin: 0 15px; /* Increased margin for more space */
+  padding: 0.5em 0; /* Padding for clickable area, border goes under */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover, nav ul li a.active {
+  color: var(--accent-green);
+  border-bottom-color: var(--accent-green); 
+}
+
+.logo {
+  font-family: var(--font-heading); /* Or --font-sans */
+  font-size: 1.75rem; /* Slightly adjusted */
+  font-weight: 600; /* Bolder for logo */
+  color: var(--accent-green); /* Logo with accent color */
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+}
+
+/* Social Icons in Nav */
 .social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  .social-icons i {
-    display: inline-block;
-    font-size: 24px;
-    color: #000;
-  }
-  
-  .social-icons .facebook:before {
-    content: "";
-    background-image: url("facebook.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-  }
-
-  .social-icons .twitter:before {
-    content: "";
-    background-image: url("twitter.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-  }
-  
-
-  .social-icons .instagram:before {
-    content: "";
-    background-image: url("instagram.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-  }
-  
-  .social-icons .github:before {
-    content: "";
-    background-image: url("github.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-  }
-
-.wrapper figure {
-    width: 70%;
-    float: right;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .wrapper figure img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .wrapper figure:hover img {
-    transform: scale(1.02);
-  }
-  .foot{
-    color: #561616;
-    font-size: small;
-    margin-top: auto;
-  }
-  footer{
-    background-color: bisque;
-    padding-top: 0.6%;
-    padding-bottom: 0.6%;
-    padding-left: 42%;
-  }
-  .contabt1{
-    width: 50%;
-    background-color: bisque;
-    padding: 40px;
-    border-radius: 40px;
-  }
-  .contabt2{
-    width: 70%;
-    background-color: bisque;
-    padding: 40px;
-    border-radius: 40px;
-    margin: auto;
-    margin-top: 6%;
-    margin-bottom: 8%;
-  }
-
-  .form {
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 25%;
-    margin-left: 8%;
-    margin-top:2%;
-    margin-bottom:0.5%;
-  }
-  
-  .content1 {
-    background-color: bisque;
-    padding: 40px;
-    border-radius: 40px;
-  }
-  
-  .conthead {
-    text-align: center;
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-size: 18px;
-    color: #555;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  textarea {
-    height: 180px;
-  }
-  
-  input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 20px;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #555;
-  }
-  
-  #thankYouMessage {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  #thankYouMessage h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  #thankYouMessage p {
-    font-size: 18px;
-    color: #555;
-  }
-  .points li{
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666;
-    margin-bottom: 10px;
-    margin-left: 2%;
+  display: flex;
+  align-items: center;
 }
 
-.thank-you-message {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-top: 20px;
+.social-icons a {
+  color: var(--text-muted); /* Muted color for icons initially */
+  margin: 0 0.75em; 
+  font-size: 1.25rem; /* Adjusted size */
+  transition: color 0.3s ease, transform 0.3s ease;
+  line-height: 1;
+}
+
+.social-icons a:hover {
+  color: var(--accent-green);
+  transform: scale(1.1);
+}
+
+/* Main Wrapper */
+.wrapper {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 120px); /* Adjust if nav height changes */
+  justify-content: center;
+  align-items: center;
+  padding: 3em 5%; /* Increased padding */
+  overflow: hidden;
+}
+
+/* Hero Section Specifics (within .wrapper on index.html) */
+.cont1 { /* Text content for hero */
+  flex-basis: 60%; /* Give more space to text if needed */
+  padding-right: 3em; 
+}
+
+.topline { /* "Hello," or similar intro line */
+  font-family: var(--font-body);
+  font-size: 1.25rem; 
+  letter-spacing: 1px;
+  color: var(--text-muted); 
+  margin-bottom: 0.5em; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-light);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+  font-weight: 600; /* Default heading weight */
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; } /* Larger for main page titles */
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+
+.multitext { /* For highlighted text like name or special words */
+  color: var(--accent-green); 
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1rem; /* Adjust if Fira Code appears small */
+  color: var(--text-muted); /* Muted for general paragraphs */
+  line-height: 1.8; /* More line height for mono */
+  margin-bottom: 1.5em;
+  max-width: 700px; /* Readability for paragraphs */
+}
+p strong { color: var(--text-light); font-weight: 500; } /* Make strong text stand out more */
+
+/* Buttons */
+.btn { /* Container for buttons */
+  display: flex;
+  gap: 1em;
+  margin-top: 2em; 
+}
+
+button, input[type="submit"] { 
+  font-family: var(--font-heading); /* Monospace for buttons too */
+  font-size: 1rem; 
+  font-weight: 500;
+  color: var(--primary-dark); /* Dark text on bright button */
+  background-color: var(--accent-green);
+  padding: 0.8em 1.8em; /* Adjusted padding */
+  margin: 0; /* Remove default button margins if any, .btn handles spacing */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px; /* Sharper radius */
+  border: 1px solid var(--accent-green); /* Border for definition */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--accent-green-darker);
+  border-color: var(--accent-green-darker);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Secondary button style (e.g., Download CV) */
+button.secondary, input[type="submit"].secondary {
+  background-color: transparent;
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+button.secondary:hover, input[type="submit"].secondary:hover {
+  background-color: var(--accent-green);
+  color: var(--primary-dark);
+  border-color: var(--accent-green);
+}
+
+
+.wrapper figure { /* Image container in Hero */
+  flex-basis: 40%; 
+}
+
+.wrapper figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; 
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Less relevant on dark theme or use subtle glow */
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-dark); 
+  padding: 2em 0; 
+  text-align: center; 
+  border-top: 1px solid var(--border-color); 
+}
+
+.foot {
+  color: var(--text-muted); 
+  font-size: 0.9rem; 
+}
+
+/* General Content Containers (for About, Skills, Projects pages) */
+.contabt1, .contabt2, .content1, .form-container { /* .form-container for contact form wrapper */
+  background-color: var(--secondary-dark); 
+  padding: 2.5em; /* Increased padding */
+  border-radius: 8px; 
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
+  margin-bottom: 2em; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Subtle shadow */
+}
+.contabt2 { margin: 2em auto; max-width: 900px; } /* For centered content pages like Blog used to be */
+
+
+/* Form Styling (for Contact page) */
+.form { /* Main wrapper for form page content */
+  width: 100%;
+  max-width: 700px; 
+  margin: 2em auto; 
+}
+
+.conthead { /* Heading within content blocks like form page */
   text-align: center;
+  font-size: 1.75rem; 
+  font-family: var(--font-heading);
+  color: var(--accent-green); /* Accent for these headings */
+  margin-bottom: 1.5em;
+}
+
+label {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  margin-bottom: 0.5em;
+  display: block; 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px 15px; /* Adjust padding */
+  margin-bottom: 1.5em; 
+  border: 1px solid var(--border-color); 
+  border-radius: 4px; /* Sharper radius */
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--text-light);
+  background-color: var(--primary-dark); /* Dark inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 0.2rem rgba(61, 220, 132, 0.25); /* Focus ring, used rgba with accent-green hex */
+}
+
+textarea {
+  min-height: 150px; /* min-height is better */
+  line-height: 1.6;
+}
+
+/* Thank You Message on Contact Form */
+#thankYouMessage, .thank-you-message { 
+  display: none; 
+  text-align: center;
+  margin-top: 20px;
+  padding: 2em;
+  background-color: var(--secondary-dark); /* Consistent with card backgrounds */
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+#thankYouMessage h2 { color: var(--accent-green); }
+
+/* Lists on other pages (e.g. old Hobbies, Skills) */
+.points li { 
+  font-size: 1rem;
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 0.75em;
+  margin-left: 1.5em; /* Standard indent for lists */
+  list-style-type: square; /* Or circle, or custom if desired */
+}
+.points li::marker { color: var(--accent-green); } /* Style list bullets */
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column; 
+    align-items: center;
+    padding: 1em 5%; /* Keep consistent padding */
+  }
+  .logo { margin-bottom: 0.75em; }
+  nav ul {
+    flex-direction: column; 
+    align-items: center;
+    width: 100%; 
+  }
+  nav ul li { width: 100%; }
+  nav ul li a {
+    padding: 0.8em 1em; 
+    width: 100%; 
+    text-align: center;
+    border-bottom: 1px solid var(--border-color); /* Use theme border color */
+  }
+  nav ul li:last-child a { border-bottom: none; }
+  .social-icons {
+    margin-top: 1em;
+    margin-left: 0;
+    order: -1; /* Move social icons to the top */
+  }
+
+  .wrapper {
+    padding: 2em 5%; /* Slightly less vertical padding on mobile */
+    flex-direction: column; 
+  }
+  .cont1 { /* Hero text */
+    flex-basis: 100%; /* Full width on mobile */
+    padding-right: 0;
+    text-align: center; 
+  }
+   p { /* General paragraph on mobile, if it has max-width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn { /* Hero buttons on mobile */
+    justify-content: center; 
+    flex-direction: column; /* Stack buttons on mobile */
+    align-items: center;
+    gap: 0.75em; /* Adjust gap for stacked buttons */
+  }
+  .btn button, .btn input[type="submit"] { width: 100%; max-width:300px; } /* Make buttons full width up to a max */
+
+  .wrapper figure { /* Hero image on mobile */
+    flex-basis: 100%; /* Full width */
+    width: 70%; 
+    max-width: 300px; 
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 2.8rem); } /* Adjust H1 clamp for mobile */
+  h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+}
+
+/* Custom Scrollbar (Optional) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--primary-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-dark);
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 100px;
+  border: 1px solid var(--border-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
 }
 
-.thank-you-message h2 {
-  font-size: 24px;
+/* Tech Stack Section & Carousel */
+.tech-stack-section {
+    padding: 3em 0; /* Section padding, 0 horizontal as container will manage */
+    text-align: center;
+    background-color: var(--secondary-dark);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden; /* Important for hiding scroll animation elements */
 }
 
-.thank-you-message p {
-  font-size: 18px;
-} 
+/* .section-title is already defined in the dark theme CSS.
+   If specific overrides for this section's title are needed, they can be added:
+.tech-stack-section .section-title {
+    margin-bottom: 2em; /* More space for carousel maybe */
+}
+*/
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    padding: 1em 0; 
+}
+
+.tech-carousel {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: fit-content; 
+    animation: scroll-infinite 30s linear infinite; 
+}
+
+.tech-item {
+    flex: 0 0 auto; 
+    padding: 1.5em; 
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px; 
+    height: 130px; 
+    text-align: center;
+    background-color: var(--primary-dark); 
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.tech-item img {
+    width: 48px;  
+    height: 48px;
+    margin-bottom: 0.75em;
+    object-fit: contain;
+}
+.tech-item span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500; 
+}
+
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(calc(-9 * (130px + 2em))); /* 9 unique items * (item width + L/R margin of 1em each side) */
+    }
+}
+
+.tech-carousel:hover {
+    animation-play-state: paused;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+.carousel-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Projects Teaser Section */
+.projects-teaser-section {
+    padding: 3em 5%; /* Consistent padding */
+    text-align: center;
+    background-color: var(--primary-dark); /* Or var(--secondary-dark) if a different bg is desired */
+    /* border-top: 1px solid var(--border-color); /* Optional: if separation from tech stack is needed */
+}
+
+/* .section-title is globally styled. Specific adjustments can be made if needed:
+.projects-teaser-section .section-title {
+    color: var(--text-light); /* Example: if accent green is too much here */
+}
+*/
+
+.teaser-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 2em; /* Space below the section title */
+}
+
+.project-teaser-card {
+    background-color: var(--secondary-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2em;
+    width: 100%;
+    max-width: 420px; /* Slightly wider cards for teasers */
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-teaser-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.project-teaser-card h3 {
+    color: var(--accent-green);
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    font-size: 1.4rem; /* Slightly smaller than main section titles */
+    font-weight: 600;
+}
+
+.project-teaser-card .project-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    flex-grow: 1; 
+}
+
+.project-teaser-card .project-tech {
+    color: var(--text-light);
+    font-size: 0.8rem; /* Smaller for tech list */
+    margin-bottom: 1.5em;
+    line-height: 1.5; /* In case tech list wraps */
+}
+.project-teaser-card .project-tech strong {
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+.project-teaser-card .btn-link button.secondary { /* Styling for the "Learn More" button */
+    width: 100%;
+    padding: 0.6em 1.5em; /* Slightly smaller padding for card buttons */
+    font-size: 0.9rem;
+}
+
+/* Styling for the "View All Projects" button if it's different from standard buttons */
+/* .projects-teaser-section > div > button { ... } */
