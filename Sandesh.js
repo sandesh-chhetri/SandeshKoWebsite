@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // I will use "sandesh.chhetri@example.com" or just copy the text "ssh sandesh@portfolio" if that was the intent.
             // Re-reading: "Add a 'Copy SSH Link' button that copies my email address for a cool developer touch."
             // Okay, I will copy the email.
-            const emailToCopy = 'sandesh.chhetri.dev@gmail.com'; // Common convention or from social links if I checked deeper.
-            // Actually, I don't have his email. I'll use a placeholder string that LOOKS like an email or the one I put in mailto.
-            // I will search for email in the provided file contents.
+            const emailToCopy = 'sandesh@example.com';
 
             navigator.clipboard.writeText(emailToCopy).then(() => {
                 const originalContent = sshBtn.innerHTML;
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // GitHub Repos Fetch
-    const username = 'sandesh-chhetri';
+    const username = 'sandeshchhetri985016';
     const reposContainer = document.getElementById('repos-grid');
 
     if (reposContainer) {
