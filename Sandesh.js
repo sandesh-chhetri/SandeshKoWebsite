@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // GitHub Repos Fetch
-    const username = 'sandesh-chhetri';
+    const username = 'sandeshchhetri985016';
     const reposContainer = document.getElementById('repos-grid');
 
     if (reposContainer) {
